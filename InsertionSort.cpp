@@ -21,7 +21,7 @@ void input()
         }
     }
 
-    cout << endl; // Membuat jarak per baris program
+    cout << endl;                             // Membuat jarak per baris program
     cout << "======================" << endl; // Membuat tampilan susunan data element array
     cout << "Masukkan Element Array" << endl;
     cout << "======================" << endl;
@@ -29,27 +29,27 @@ void input()
     for (int i = 0; i < n; i++) // Menggunakan perulangan  for untuk menyimpan data pada array
     {
         cout << "Data ke-" << (i + 1) << ": "; // Memasukkan atau menginputkan nilai data n
-        cin >> arr[i]; // Menyimpan nilai data n kedalam array arr
+        cin >> arr[i];                         // Menyimpan nilai data n kedalam array arr
     }
 }
 
 void insertionSort()
-{   //Procedure Insertionsort 
+{ // Procedure Insertionsort
 
     int temp; // Membuat variable data temporer atau penyimpanan sementara
     int j, i; // Membuat variable j sebagai penanda
 
-    for (i =1; i <= n - 1; i++)
+    for (i = 1; i <= n - 1; i++)
     { // Step 1
-        
-        temp = arr [i]; // Step 2
+
+        temp = arr[i]; // Step 2
 
         j = i - 1; // Step 3
 
         while (j >= 0 && arr[j] > temp) // Step 4
         {
-           arr[j + 1] = arr[j]; // Step 4a
-           j --; // Step 4b
+            arr[j + 1] = arr[j]; // Step 4a
+            j--;                 // Step 4b
         }
 
         arr[j + 1] = temp; // Step 5
@@ -60,15 +60,23 @@ void display()
 {
     cout << endl;
     cout << "=================================" << endl;
-    cout << "Total Passs = " << n -1 << endl; // count movement
+    cout << "Total Passs = " << n - 1 << endl;           // count movement
     cout << "=================================" << endl; // Output ke layar
     cout << "Element Array yang telah tersusun" << endl; // Output ke layar
     cout << "=================================" << endl; // Output ke layar
+
+    for (int j = 0; j < n; j++)
+    {                           // Looping dengan j dimulai dari 0 hingga n-1
+        cout << arr[j] << endl; // Output ke layar
+    }
+    cout << endl; // Output baris kosong
 }
 
-for (int j = 0; j < n; j++)
-{ // Looping dengan j dimulai dari 0 hingga n-1
-cout << arr[j] << endl; // Output ke layar
-}
-cout << endl;
+int main()
+{
+    input();
+    insertionSort();
+    display();
+    system("Pause");
+    return 0;
 }
